@@ -10,7 +10,7 @@ const TvShowContainer = props =>{
         <>
             {props.tvShows.length?
                 <CardColumns>
-                {props.tvShows && props.tvShows.map(ts => < TvShowCard key={ts.id} {...ts}/>)}
+                {props.tvShows && props.tvShows.map(ts => < TvShowCard key={ts.id} {...ts} btText={props.btText} changeDisplay={props.changeDisplay} handleClick={props.handleClick}/>)}
                 </CardColumns>
             :
             <img id="loading" src="loading.svg" style={{padding:'200px 475px'}}/>

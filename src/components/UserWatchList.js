@@ -1,5 +1,5 @@
 import React from 'react'
-import {BASE_URL} from '../Constants'
+import {BASE_URL, DELETE_FETCH} from '../Constants'
 import TvShowContainer from '../containers/TvShowContainer'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -7,6 +7,16 @@ import Col from 'react-bootstrap/Col'
 class UserWatchList extends React.Component {
     state={
         tvshows:[]
+    }
+
+    handleClick = (e, id) =>{
+        e.preventDefault()
+        fetch(BASE_URL+`tvshows/${id}`,DELETE_FETCH)
+        .then(res => res.json())
+        .then(res =>{
+            let tvshows = this.state.tvshows.filter(tv => tv.id !== res.id)
+            this.setState({tvshows})
+        })
     }
 
     componentDidMount(){
@@ -25,7 +35,7 @@ class UserWatchList extends React.Component {
                 <h3 style={{paddingLeft:'445px',paddingTop:'10px'}}>Your WatchList</h3>
                 </Row>
                 <Row>
-                    <TvShowContainer tvShows={this.state.tvshows}/>
+                    <TvShowContainer changeDisplay={this.props.changeDisplay}handleClick={this.handleClick} btText="delete"tvShows={this.state.tvshows}/>
                 </Row>
             </>
         )

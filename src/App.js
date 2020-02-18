@@ -13,6 +13,7 @@ import {NavBar} from "./components/NavBar"
 import SignUp from "./components/SignUp"
 import LogIn from "./components/LogIn"
 import UserWatchList from "./components/UserWatchList"
+import TvShowDisplay from "./components/TvShowDisplay"
  
 import SearchContainer from './containers/SearchContainer'
 
@@ -27,7 +28,14 @@ class App extends React.Component {
     loggedIn:false,
     user:{},
     search:'',
-    Csearch:''
+    Csearch:'',
+    displaytv:{}
+  }
+
+  changeDisplay = (poster_path,overview,name,id) =>{
+    console.log(poster_path,overview,name)
+    this.setState({displaytv:{id,poster_path,overview,name}})
+    this.props.history.push('/tvshow')
   }
 
   handleLogout=()=>{
@@ -36,7 +44,9 @@ class App extends React.Component {
   }
   
   loggedIn = (user) =>{
+    console.log(user)
     this.setState({loggedIn:true,user})
+    this.props.history.push('/')
   }
 
   componentDidMount(){
@@ -69,7 +79,6 @@ class App extends React.Component {
     }
   }
   render(){
-    console.log(this.props)
     return (
     <div className="App">
       <NavBar search={this.state.search} handleChange={this.handleChange} handleSubmit={this.handleSubmit}user={this.state.user}loggedIn={this.state.loggedIn} handleLogout={this.handleLogout}/>
@@ -77,8 +86,9 @@ class App extends React.Component {
         <Switch>
           <Route path="/login"render={(routerProps)=><LogIn {...routerProps} loggedIn={this.loggedIn} />}/>
           <Route path="/signup"render={(routerProps)=><SignUp {...routerProps} loggedIn={this.loggedIn}/>}/>
-          <Route path="/search"render={(routerProps)=><SearchContainer {...routerProps} search={this.state.Csearch}/>}/>
-          <Route path={`/@${this.state.user && this.state.user.username}`} render={()=><UserWatchList {...this.state.user}/>} />
+          <Route path="/search"render={(routerProps)=><SearchContainer {...routerProps} changeDisplay={this.changeDisplay}search={this.state.Csearch}/>}/>
+          <Route path={`/@${this.state.user && this.state.user.username}`} render={()=><UserWatchList changeDisplay={this.changeDisplay}{...this.state.user}/>} />
+          <Route exact path="/tvshow" render={()=><TvShowDisplay {...this.state.displaytv}/>}/>
           <Route exact path="/" render={()=><Home tvshows={this.state.featuredTvShows} load={this.state.load} />}/>
         </Switch>
         </Layout>

@@ -8,6 +8,24 @@ export const GET_FETCH = {
         Authorization: `Bearer ${localStorage.token}`
     }
 }
+export const DELETE_FETCH = {
+    method:'DELETE',
+    headers:{
+        'Content-Type':'application/json',
+        Accept:'application/json',
+        Authorization: `Bearer ${localStorage.token}`
+    }
+}
+
+export const POST_FETCH = {
+    method:'POST',
+    headers:{
+        'Content-Type':'application/json',
+        Accept:'application/json',
+        Authorization: `Bearer ${localStorage.token}`
+    }
+}
+
 export const Headers = {
     'Content-Type':'application/json',
     Accept:'application/json',

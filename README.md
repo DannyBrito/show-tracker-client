@@ -1,68 +1,79 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Show-Tracker - App 📺
 
-## Available Scripts
+[Backend](https://github.com/DannyBrito/show-tracker-backend)
 
-In the project directory, you can run:
+> A tracking app that helps you keep better track of your tv-show activity. 
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Overview
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Users can add & remove tv shows from their watchlist.
+The search bar can be easily access by users to look up different tv shows. Once the results are display, the user has two options:
 
-### `yarn test`
+<li/>track tv-show
+<li/>go to display page for specific tv-show
+#
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![](./docs/overview.gif)
 
-### `yarn build`
+<b>Sign Up & Log In:</b>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Standar Log-In and Sign-Up pages implemented with different validations and Auth0.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![](./docs/logsignup.gif)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+<b>JWT/Auth0 & LocalStorage:</b>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Utilized JWT, Auth0 and LocalStorage to allow users to stay log-in, improving user experience.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![](./docs/localstorage.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technologies
+<ul>
+<li /><b>React</b>
+<li /><b>JavaScript</b>
+<li /><b>HTML/CSS</b>
+<li /><b>JWT & Auth0</b>
+<li />Ruby on Rails - API
+<li />Bcrypt
+<li />Postgresql
+<li />The Movie DB API - tv-shows Data
+</ul>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+##### Prerequisites
+<ul>
+<li /> NPM
+<li /> Ruby
+<li /> Postgresql
+<li /> The Movie DB API Key
+</ul> 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### Running
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+0. Set up [Backend Server](https://github.com/DannyBrito/show-tracker-backend)
+1. Clone/Download Repo.
+2. move into project ``` cd tv-show-tracker-client```
+3. install dependencies
+    ```sh 
+    npm i
+    ```
+4. run client with npm start
+    ```sh 
+    npm start
+    ```
 
-### Code Splitting
+## features to implement 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<ul>
+<li />social interaction between users
+<li />individual episode tracking
+<li />creating multiple watch-lists
+</ul>
 
-### Analyzing the Bundle Size
+## Meta
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Danny Brito – [LinkedIn](https://www.linkedin.com/in/dannybrito) - [Github](https://github.com/DannyBrito)

@@ -46,7 +46,6 @@ class Signup extends React.Component{
           if(res.token){
             localStorage.token = res.token
             this.props.loggedIn(res.user)
-            this.props.history.push('/')
           }
           else{
             this.setState({

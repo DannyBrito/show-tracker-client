@@ -40,7 +40,6 @@ class LogIn extends React.Component{
       .then(res=>{
         if(res.token){localStorage.token = res.token
           this.props.loggedIn(res.user)
-          this.props.history.push('/')
         }
         else{
         this.setState({ username: "",password: "",alert:res.message})
